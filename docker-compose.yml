@@ -1,0 +1,15 @@
+services:
+  nginx:
+    image: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./primarycolorsman/:/var/www/primarycolorsman
+    networks:
+      - my-network
+networks:
+  my-network:
+
