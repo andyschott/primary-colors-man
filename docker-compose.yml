@@ -14,6 +14,18 @@ services:
       # Script to autoreload Nginx when certs are renewed
       - ./nginx/99-autoreload.sh:/docker-entrypoint.d/99-autoreload.sh
       - ./primarycolorsman/:/var/www/primarycolorsman
+    depends_on:
+      - biblereadings
+    networks:
+      - my-network
+  biblereadings:
+    image: andyschott/services:biblereadings
+    ports:
+      - "8080"
+    env_file:
+      - ./biblereadings/environment.txt
+    volumes:
+      - ./biblereadings/data/:/home/app/
     networks:
       - my-network
   certbot:
