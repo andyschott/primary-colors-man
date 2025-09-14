@@ -28,6 +28,12 @@ services:
       - ./biblereadings/data/:/home/app/
     networks:
       - my-network
+  payoutbot:
+    image: andyschott/services:payoutbot
+    env_file:
+      - ./payoutbot/environment.txt
+    volumes:
+      - ./payoutbot/data:/app/data/
   certbot:
     image: certbot/certbot
     volumes:
