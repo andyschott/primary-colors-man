@@ -15,6 +15,7 @@ services:
       - ./nginx/99-autoreload.sh:/docker-entrypoint.d/99-autoreload.sh
       - ./primarycolorsman/:/var/www/primarycolorsman
       - ./swgoh-utils:/var/www/swgoh-utils
+      - ./utils:/var/www/utils
     depends_on:
       - biblereadings
     networks:
