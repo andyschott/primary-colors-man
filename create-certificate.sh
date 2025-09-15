@@ -3,7 +3,7 @@
 rsa_key_size=4096
 data_path="./certbot"
 email="andy@andyschott.com"
-declare -a domains=("biblereadings.primarycolorsman.com")
+declare -a domains=("swgoh.primarycolorsman.com")
 dry_run="0"
 
 domain_args=""
