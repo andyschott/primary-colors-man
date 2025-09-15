@@ -2,3 +2,4 @@ certbot/
 environment.txt
 biblereadings/data/
 payoutbot/data/
+swgoh-utils/
