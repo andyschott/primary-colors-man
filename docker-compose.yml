@@ -21,7 +21,7 @@ services:
     networks:
       - my-network
   biblereadings:
-    image: andyschott/services:biblereadings
+    image: ghcr.io/andyschott/biblereadings2:55e685786fb483faf917f021314ef2f48f1946cd
     ports:
       - "8080"
     env_file:
