@@ -31,11 +31,11 @@ services:
     networks:
       - my-network
   payoutbot:
-    image: andyschott/services:payoutbot
+    image: ghcr.io/andyschott/payoutbot:42261af53be9d69c0920c2c84c66c365db793929
     env_file:
       - ./payoutbot/environment.txt
     volumes:
-      - ./payoutbot/data:/app/data/
+      - ./payoutbot/data:/home/app/
   certbot:
     image: certbot/certbot
     volumes:
