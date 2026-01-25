@@ -3,6 +3,8 @@ services:
     image: nginx
     restart: unless-stopped
     env_file: .env
+    logging:
+      driver: "local"
     ports:
       - "80:80"
       - "443:443"
@@ -21,7 +23,9 @@ services:
     networks:
       - my-network
   biblereadings:
-    image: ghcr.io/andyschott/biblereadings2:e998b440087e202ede394a90e2345ee81c3a69b6
+    image: ghcr.io/andyschott/biblereadings2:40aaf2463425fd2604ade4a84778edec9728320c
+    logging:
+      driver: "local"
     ports:
       - "8080"
     env_file:
@@ -32,12 +36,16 @@ services:
       - my-network
   payoutbot:
     image: ghcr.io/andyschott/payoutbot:42261af53be9d69c0920c2c84c66c365db793929
+    logging:
+      driver: "local"
     env_file:
       - ./payoutbot/environment.txt
     volumes:
       - ./payoutbot/data:/home/app/
   certbot:
     image: certbot/certbot
+    logging:
+      driver: "local"
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
