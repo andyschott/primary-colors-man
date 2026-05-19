@@ -4,3 +4,6 @@ biblereadings/data/
 payoutbot/data/
 swgoh-utils/
 utils/
+db/migrations/*.sql
+db/pgdata
+swgoh-api

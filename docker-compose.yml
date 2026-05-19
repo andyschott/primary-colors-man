@@ -20,6 +20,7 @@ services:
       - ./utils:/var/www/utils
     depends_on:
       - biblereadings
+      - swgoh-api
     networks:
       - my-network
   biblereadings:
@@ -32,6 +33,30 @@ services:
       - ./biblereadings/environment.txt
     volumes:
       - ./biblereadings/data/:/home/app/
+    networks:
+      - my-network
+  swgoh-api:
+    image: ghcr.io/andyschott/swgoh-utils:6b75ddc39611818072ad34f4a914cf3b18c95c46
+    logging:
+      driver: "local"
+    ports:
+      - "8080"
+    env_file:
+      - ./swgoh-api/environment.txt
+    depends_on:
+      - db
+    networks:
+      - my-network
+  db:
+    image: postgres:18
+    restart: always
+    ports:
+      - 5432:5432
+    env_file:
+      - ./db/environment.txt
+    volumes:
+      - ./db/pgdata:/var/lib/postgresql/
+      - ./db/migrations:/db_migrations
     networks:
       - my-network
   payoutbot:
