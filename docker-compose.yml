@@ -36,7 +36,7 @@ services:
     networks:
       - my-network
   swgoh-api:
-    image: ghcr.io/andyschott/swgoh-utils:ffc89eaa0921220b06b51aa95a9c5b683ac4c949
+    image: ghcr.io/andyschott/swgoh-utils:42f963fd73bc075bf2e14cd32767e042fe29697e
     logging:
       driver: "local"
     ports:
