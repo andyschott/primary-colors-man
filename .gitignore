@@ -8,3 +8,5 @@ db/migrations/*.sql
 db/migrations/backups/
 db/pgdata
 swgoh-api
+palworld-utils/
+

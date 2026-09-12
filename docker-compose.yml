@@ -18,6 +18,7 @@ services:
       - ./primarycolorsman/:/var/www/primarycolorsman
       - ./swgoh-utils:/var/www/swgoh-utils
       - ./utils:/var/www/utils
+      - ./palworld-utils:/var/www/palworld-utils
     depends_on:
       - biblereadings
       - swgoh-api
