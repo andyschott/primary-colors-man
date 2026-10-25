@@ -25,7 +25,7 @@ services:
     networks:
       - my-network
   biblereadings:
-    image: ghcr.io/andyschott/biblereadings2:638fafd597629cc87203b5b692bdf0b5bc06c4fe
+    image: ghcr.io/andyschott/biblereadings2:c5d13fe0a67df87c049ce8470bab37d9c926206e
     logging:
       driver: "local"
     ports:
